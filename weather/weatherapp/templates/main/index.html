@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>weather</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+  <style>
+       body{background-color: rgb(172, 240, 217);
+
+    }
+  </style>
+  <nav class="row" style="background: rgb(255, 115, 0); color: white;">
+    <h1 class="col-md-3 text-center">Weather</h1>
+  </nav>
+  <br/>
+  <br/>
+   <center class="row">
+          <form method="post" class="col-md-6 col-md-offset-3">
+             {% csrf_token %}
+               <div class="input-group">
+                  <input type="text" class="form-control" name="city" placeholder="Search">
+               <div class="input-group-btn">
+                 <button class="btn btn-primary" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                 </button>
+
+              </div>
+        <form>
+  </center>
+
+  <div class="row">
+      {% if country_code and coordinate and temp and pressure and humidity %}
+      <div class="col-md-6 col-md-offset-3">
+          <div class="media-left">
+             <figure class="image is-100x100">
+                <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="Image">
+             </figure>
+        </div>
+        <center>
+
+        <h1><b style="color:brown">City : {{city}}</b></h1>
+        <h4>{{country_code}}</h4>
+        <h4><i>" {{description}} " </i></h4>
+        <h5>coordinate : {{coordinate}}</h5>
+        <h5>temparature : {{temp}}</h5>
+        <h5>pressure : {{pressure}} </h5>
+        <h5>humidity : {{humidity}}</h5>
+        <h5>windspeed : {{windspeed}}</h5>
+      </center>
+    </div>
+
+    {% endif %}
+  </div>
+
+
+</body>
+
+</html>
