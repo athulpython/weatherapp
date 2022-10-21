@@ -11,10 +11,10 @@ def index(request):
 	if request.method == 'POST':
 		city = request.POST['city']
 		''' api key might be expired use your own api_key
-			place api_key in place of appid ="d002ed44d8c074c0b9732d2a81fbf94f" '''
+			place api_key in place of appid ="your api key" '''
 
 		source = urllib.request.urlopen(
-		'http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=d002ed44d8c074c0b9732d2a81fbf94f').read()
+		'http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=your api key').read()
 
 		list_of_data = json.loads(source)
 
