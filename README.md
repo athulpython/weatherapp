@@ -18,7 +18,7 @@ Almost everyone uses a weather app to check the current weather conditions in th
 
 - Django
 
-- Sqlite3
+- SQL
 
 
 
